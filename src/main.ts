@@ -1,15 +1,5 @@
-const outputStudents = (students: Student[]) : void => {
-    students.forEach(student => outputStudent(student))
-};
-
-type Student = {
-    firstName: string;
-    lastName: string;
-    age: number;
-    grades: Grade[];
-};
-
-type Grade = 1 | "A" | 2 | "B" | 3 | "C" | 4 | "D" | 5 | "E" | 6 | "F" | undefined;
+import {Student} from "./student"
+import {outputStudents, outputStudent} from "./functions"
 
 const student1: Student = {
     firstName: "Max",
@@ -41,16 +31,5 @@ const  student4: Student = {
 
 const students: Student[] = [student1, student2, student3, student4];
 
-// outputStudent(student1);
-
+outputStudent(student1);
 outputStudents(students);
-
-function outputStudent(student: Student): void {
-    console.log(`
-    ${student.firstName} ${student.lastName} (${student.age})
-    ${"=".repeat(30)}
-    Grades: ${student.grades.map(g => g || "*")}
-    `);
-}
-
-
