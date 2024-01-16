@@ -1,9 +1,9 @@
-import {Grade} from "./grade"
+import {Subject} from "./subject.ts";
 
 export type Student = {
     firstName: string;
     lastName: string;
     age: number;
-    grades: Grade[];
+    grades: Subject[];
 };
 

@@ -1,13 +1,14 @@
 import {Student} from "./student";
 
 export function outputStudent(student: Student): void {
-    console.log(`
-    ${student.firstName} ${student.lastName} (${student.age})
-    ${"=".repeat(30)}
-    Grades: ${student.grades.map(g => g || "*")}
-    `);
+    const studentInfo: string = `${student.firstName} ${student.lastName} (${student.age})`;
+    console.log(
+        `${studentInfo}
+${"=".repeat(studentInfo.length)}
+Grades:${student.grades.map(subject => `\n${subject.name}: ${subject.grades.map(g => g || "*")}`) } 
+             `)
 }
 
-export const outputStudents = (students: Student[]) : void => {
+export const outputStudents = (students: Student[]): void => {
     students.forEach(student => outputStudent(student))
 };
